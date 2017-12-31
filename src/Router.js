@@ -10,13 +10,25 @@ import {
 } from "react-navigation";
 
 /*~~~~~~~~~~~Screens~~~~~~~~~~~~~~*/
-import { Intro } from "./screens";
+import { Intro, Login, SignUp } from "./screens";
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 const MainNavigator = StackNavigator({
   intro: {
     screen: Intro,
+    navigationOptions: {
+      header: null
+    }
+  },
+  login: {
+    screen: Login,
+    navigationOptions: {
+      header: null
+    }
+  },
+  signup: {
+    screen: SignUp,
     navigationOptions: {
       header: null
     }

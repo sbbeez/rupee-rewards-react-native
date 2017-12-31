@@ -11,12 +11,10 @@ import {
 
 //Constant
 import { intro_screen_data } from "../utils";
-//Dimensions
-import { Dimens } from "../themes";
+//Dimensions and colors
+import { Dimens, Colors } from "../themes";
 //Common Components
 import { DarkText, RoundButton } from "../components/common";
-//colors
-import { Colors } from "../themes";
 //Screen Components
 import Dots from "../components/Intro/Dots";
 
@@ -39,7 +37,10 @@ class Intro extends Component {
               <DarkText text={item.title} />
               <Text style={styles.desc}>{item.description}</Text>
               {key === 2 ? (
-                <RoundButton title={"Get Started"} onPress={() => {}} />
+                <RoundButton
+                  title={"Get Started"}
+                  onPress={() => this.props.navigation.navigate("login", {})}
+                />
               ) : (
                 <View />
               )}
