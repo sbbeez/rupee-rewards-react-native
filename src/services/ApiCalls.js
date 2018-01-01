@@ -1,4 +1,4 @@
-import { AsyncStorage, ToastAndroid } from "react-native";
+import { AsyncStorage } from "react-native";
 
 /*
   returns headers without any header, not an async operation
@@ -6,8 +6,8 @@ import { AsyncStorage, ToastAndroid } from "react-native";
 
 const getHeaders = () => {
   return {
-    "Content-Type": "application/json",
-    Accept: "application/vnd.appName+json; version=1" //optional
+    "Content-Type": "application/json"
+    // Accept: "application/vnd.appName+json; version=1" //optional
   };
 };
 
@@ -16,17 +16,21 @@ const getHeaders = () => {
 */
 export const postRequest = async (URL, data) => {
   let headers = getHeaders();
-  const responseData = await fetch(URL, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(data)
-  });
-  const responseJson = await responseData.json();
-  if (responseData.status === 422) {
-    ToastAndroid.show(responseJson.message, ToastAndroid.SHORT);
+  try {
+    const responseData = await fetch(URL, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(data)
+    });
+    const responseJson = await responseData.json();
+    if (responseData.status === 422) {
+      return null;
+    }
+    return responseJson;
+  } catch (e) {
+    console.log(e);
     return null;
   }
-  return responseJson;
 };
 
 /*

@@ -8,9 +8,12 @@ import {
   TextInput
 } from "react-native";
 import { connect } from "react-redux";
-import {} from "../actions";
+import { loginAction } from "../actions";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
+import {
+  LoadingModalManager,
+  LoadingModal
+} from "react-native-loading-spinner-modal";
 //Dimensions and colors
 import { Dimens, Colors } from "../themes";
 //Common components import
@@ -27,10 +30,19 @@ class Login extends Component {
       number: ""
     };
   }
+  componentDidMount() {
+    LoadingModalManager.registerModal(this.refs.loadingmodal);
+  }
+  componentWillUnmount() {
+    LoadingModalManager.unregister();
+  }
 
   render() {
+    const { number } = this.state;
+    const { loginAction, navigation } = this.props;
     return (
       <KeyboardAwareScrollView contentContainerStyle={styles.container}>
+        <LoadingModal ref="loadingmodal" />
         <View style={styles.container}>
           <StatusBar
             backgroundColor={Colors.login_status}
@@ -44,7 +56,7 @@ class Login extends Component {
           />
           <TextInput
             style={styles.textInput}
-            placeholder={"Enter your Registered phone Number"}
+            placeholder={"Phone Number"}
             keyboardType={"phone-pad"}
             underlineColorAndroid={"transparent"}
             onChangeText={text => {
@@ -52,17 +64,17 @@ class Login extends Component {
                 this.setState({ number: text });
               }
             }}
-            value={this.state.number}
+            value={number}
           />
           <RoundButton
             title={"Login"}
             style={{ marginTop: 30 }}
-            onPress={() => {}}
+            onPress={() => loginAction(number, navigation)}
           />
           <Text
             style={styles.createAccounText}
             onPress={() => {
-              this.props.navigation.navigate("signup", {});
+              navigation.navigate("signup", {});
             }}
           >
             No account? create one here.
@@ -103,8 +115,4 @@ const styles = StyleSheet.create({
   },
   appName: { margin: 20, fontSize: 25, color: Colors.white }
 });
-// const mapStateToProps = state => {
-//   const {} = state.login;
-//   return {};
-// };
-export default connect(null, {})(Login);
+export default connect(null, { loginAction })(Login);

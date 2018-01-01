@@ -10,7 +10,7 @@ import {
 } from "react-navigation";
 
 /*~~~~~~~~~~~Screens~~~~~~~~~~~~~~*/
-import { Intro, Login, SignUp } from "./screens";
+import { Intro, Login, SignUp, OtpVerify } from "./screens";
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
@@ -29,6 +29,12 @@ const MainNavigator = StackNavigator({
   },
   signup: {
     screen: SignUp,
+    navigationOptions: {
+      header: null
+    }
+  },
+  otp_verify: {
+    screen: OtpVerify,
     navigationOptions: {
       header: null
     }
