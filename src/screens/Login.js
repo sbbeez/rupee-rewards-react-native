@@ -33,10 +33,6 @@ class Login extends Component {
   componentDidMount() {
     LoadingModalManager.registerModal(this.refs.loadingmodal);
   }
-  componentWillUnmount() {
-    LoadingModalManager.unregister();
-  }
-
   render() {
     const { number } = this.state;
     const { loginAction, navigation } = this.props;
