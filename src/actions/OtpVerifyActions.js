@@ -21,10 +21,11 @@ export const resendOtpAction = phone => {
     LoadingModalManager.showLoadingModal({
       text: "Reqesting Otp"
     });
-    const resendOtpJson = await postRequest(POST_RESEND_OTP, { phone });
-    resendOtpJson
-      ? LoadingModalManager.hideLoadingModal()
-      : showToast("Oops something went wrong!");
+    // const resendOtpJson = await postRequest(POST_RESEND_OTP, { phone });
+    // resendOtpJson
+    //   ? LoadingModalManager.hideLoadingModal()
+    //   : showToast("Oops something went wrong!");
+    showToast("Your OTP will be sent in few seconds.")
     LoadingModalManager.hideLoadingModal();
   };
 };

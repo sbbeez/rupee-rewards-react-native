@@ -12,6 +12,7 @@
     "lodash": "^4.17.4",
     "react": "16.0.0",
     "react-native": "^0.51.0",
+    "react-native-datepicker": "^1.6.0",
     "react-native-keyboard-aware-scroll-view": "^0.4.1",
     "react-native-loading-spinner-modal": "^1.0.2",
     "react-navigation": "^1.0.0-beta.21",

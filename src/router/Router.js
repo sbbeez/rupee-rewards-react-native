@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import reducers from "./reducers";
+import reducers from "../reducers";
 import ReduxThunk from "redux-thunk";
 import {
   TabNavigator,
@@ -10,7 +10,7 @@ import {
 } from "react-navigation";
 
 /*~~~~~~~~~~~Screens~~~~~~~~~~~~~~*/
-import { Intro, Login, SignUp, OtpVerify } from "./screens";
+import { Intro, Login, SignUp, OtpVerify, MainScreen } from "../screens";
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
@@ -35,6 +35,12 @@ const MainNavigator = StackNavigator({
   },
   otp_verify: {
     screen: OtpVerify,
+    navigationOptions: {
+      header: null
+    }
+  },
+  main_screen: {
+    screen: MainScreen,
     navigationOptions: {
       header: null
     }

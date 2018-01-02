@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     justifyContent: "center"
   },
-  heading: { textAlign: "center", margin: 30, color: Colors.black },
+  heading: { textAlign: "center", margin: 30, color: Colors.login_status },
   textInput: {
     width: Dimens.width * 0.9,
     textAlign: "center",

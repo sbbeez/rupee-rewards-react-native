@@ -13,7 +13,8 @@ export default ({ onPress, title, style }) => {
             borderRadius: 30,
             alignItems: "center",
             padding: 15,
-            backgroundColor: Colors.intro_status
+            backgroundColor: Colors.intro_status,
+            elevation: 10
           },
           style
         ]}

@@ -3,3 +3,5 @@ export { default as Login } from "./Login";
 export { default as SignUp } from "./SignUp";
 
 export { default as OtpVerify } from "./OtpVerify";
+
+export { default as MainScreen } from "./MainScreen";

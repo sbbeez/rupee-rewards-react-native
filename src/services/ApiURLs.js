@@ -7,3 +7,6 @@ export const POST_LOGIN = `${ROOT_URL}signin`;
 //Otp verify routes
 export const POST_OTP = `${ROOT_URL}verifyotp`;
 export const POST_RESEND_OTP = `${ROOT_URL}resendotp`;
+
+//Sign Up Routes
+export const POST_SIGN_UP = `${ROOT_URL}signup`;
