@@ -28,6 +28,7 @@ class OtpVerify extends Component {
     return (
       <KeyboardAwareScrollView contentContainerStyle={styles.container}>
         <LoadingModal ref="loadingmodal" />
+        <StatusBar backgroundColor={Colors.intro_bg} barStyle="light-content" />
         <View style={styles.container}>
           <DarkText
             text={
@@ -65,21 +66,21 @@ const styles = StyleSheet.create({
     width: Dimens.width,
     height: Dimens.height,
     alignItems: "center",
-    backgroundColor: Colors.login_bg,
+    backgroundColor: Colors.white,
     justifyContent: "center"
   },
-  heading: { textAlign: "center", margin: 30, color: Colors.white },
+  heading: { textAlign: "center", margin: 30, color: Colors.black },
   textInput: {
     width: Dimens.width * 0.9,
     textAlign: "center",
     backgroundColor: Colors.intro_bg,
     padding: 15,
-    borderRadius: 30,
+    borderRadius: 10,
     fontSize: 20
   },
   resendOtp: {
     margin: 20,
-    color: Colors.white,
+    color: Colors.black,
     textDecorationLine: "underline"
   }
 });

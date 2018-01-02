@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     height: Dimens.height,
     alignItems: "center",
     justifyContent: "space-around",
-    backgroundColor: Colors.intro_bg
+    backgroundColor: Colors.white
   },
   introImages: {
     width: 300,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   divider: {
     width: Dimens.width,
     height: 1,
-    backgroundColor: Colors.white
+    backgroundColor: Colors.divider
   }
 });
 export default Intro;

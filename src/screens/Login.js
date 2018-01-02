@@ -5,7 +5,8 @@ import {
   StyleSheet,
   StatusBar,
   Image,
-  TextInput
+  TextInput,
+  ImageBackground
 } from "react-native";
 import { connect } from "react-redux";
 import { loginAction } from "../actions";
@@ -39,16 +40,22 @@ class Login extends Component {
     return (
       <KeyboardAwareScrollView contentContainerStyle={styles.container}>
         <LoadingModal ref="loadingmodal" />
-        <View style={styles.container}>
+        <ImageBackground
+          style={styles.container}
+          source={{
+            uri:
+              "https://thechive.files.wordpress.com/2015/01/i-think-its-time-for-a-new-phone-background-50-photos-4.jpg?quality=85&strip=info&w=600"
+          }}
+        >
           <StatusBar
-            backgroundColor={Colors.login_status}
+            backgroundColor={Colors.white}
             barStyle="light-content"
           />
-          <DarkText text={APP_NAME} style={styles.appName} />
           <Image source={Images.logo} style={styles.introImages} />
+          <DarkText text={APP_NAME} style={styles.appName} />
           <DarkText
             text={"Login"}
-            style={{ margin: 20, color: Colors.white }}
+            style={{ margin: 10, color: Colors.black }}
           />
           <TextInput
             style={styles.textInput}
@@ -75,7 +82,7 @@ class Login extends Component {
           >
             No account? create one here.
           </Text>
-        </View>
+        </ImageBackground>
       </KeyboardAwareScrollView>
     );
   }
@@ -86,13 +93,11 @@ const styles = StyleSheet.create({
     width: Dimens.width,
     height: Dimens.height,
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Colors.login_bg,
-    marginTop: -(Dimens.height * 0.07)
+    justifyContent: "center"
   },
   introImages: {
-    width: 300,
-    height: 300,
+    width: 100,
+    height: 100,
     margin: 10
   },
   createAccounText: {
@@ -104,11 +109,11 @@ const styles = StyleSheet.create({
   textInput: {
     width: Dimens.width * 0.9,
     textAlign: "center",
-    backgroundColor: Colors.intro_bg,
+    backgroundColor: Colors.white,
     padding: 15,
-    borderRadius: 30,
+    borderRadius: 10,
     fontSize: 20
   },
-  appName: { margin: 20, fontSize: 25, color: Colors.white }
+  appName: { margin: 5, fontSize: 25, color: Colors.white }
 });
 export default connect(null, { loginAction })(Login);

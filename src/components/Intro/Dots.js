@@ -16,7 +16,7 @@ export default props => {
             height: 10,
             borderRadius: 30,
             backgroundColor:
-              props.value === item ? Colors.intro_status : Colors.white
+              props.value === item ? Colors.intro_status : Colors.login_status
           }}
         />
       ))}
