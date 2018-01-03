@@ -11,5 +11,6 @@ export default {
   male_white: require("../assets/images/male_white.png"),
   female_white: require("../assets/images/female_white.png"),
   menu_white: require("../assets/images/menu_white.png"),
-  back_arrow_white: require("../assets/images/back_arrow_white.png")
+  back_arrow_white: require("../assets/images/back_arrow_white.png"),
+  play_blue: require("../assets/images/play_blue.png")
 };
