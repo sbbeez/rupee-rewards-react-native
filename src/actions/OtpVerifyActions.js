@@ -11,7 +11,7 @@ export const verifyOtpAction = (otp, phone, navigation) => {
     // verifyOtpJson
     //   ? navigation.navigate("main_screen", {})
     //   : showToast("Oops something went wrong!");
-    navigation.navigate("main_screen", {});
+    navigation.navigate("main_stack", {});
     LoadingModalManager.hideLoadingModal();
   };
 };
@@ -25,7 +25,7 @@ export const resendOtpAction = phone => {
     // resendOtpJson
     //   ? LoadingModalManager.hideLoadingModal()
     //   : showToast("Oops something went wrong!");
-    showToast("Your OTP will be sent in few seconds.")
+    showToast("Your OTP will be sent in few seconds.");
     LoadingModalManager.hideLoadingModal();
   };
 };

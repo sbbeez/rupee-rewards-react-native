@@ -12,9 +12,14 @@ import {
 /*~~~~~~~~~~~Screens~~~~~~~~~~~~~~*/
 import { Intro, Login, SignUp, OtpVerify, MainScreen } from "../screens";
 
+import SideBar from "./SideBar";
+
+//Delete
+import { Text } from "react-native";
+
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
-const MainNavigator = StackNavigator({
+const AuthStack = StackNavigator({
   intro: {
     screen: Intro,
     navigationOptions: {
@@ -38,7 +43,9 @@ const MainNavigator = StackNavigator({
     navigationOptions: {
       header: null
     }
-  },
+  }
+});
+const DrawerStack = DrawerNavigator({
   main_screen: {
     screen: MainScreen,
     navigationOptions: {
@@ -46,6 +53,20 @@ const MainNavigator = StackNavigator({
     }
   }
 });
+
+const MainNavigator = StackNavigator(
+  {
+    auth_stack: {
+      screen: AuthStack
+    },
+    main_stack: {
+      screen: DrawerStack
+    }
+  },
+  {
+    headerMode: "none"
+  }
+);
 
 class Router extends Component {
   render() {

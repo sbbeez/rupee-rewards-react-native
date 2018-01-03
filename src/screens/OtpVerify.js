@@ -32,7 +32,7 @@ class OtpVerify extends Component {
         <View style={styles.container}>
           <DarkText
             text={
-              "Hey you, welcome back! We're glad to welcome you! Happy Bucking!!"
+              "Hey you, We're glad to welcome you! Happy Bucking!!"
             }
             style={styles.heading}
           />
